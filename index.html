@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>maleficent.in — A small, late gift</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- GSAP Vendor -->
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/MotionPathPlugin.min.js" defer></script>
+
+  <!-- App Scripts -->
+  <script src="js/utils.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/carScene.js" defer></script>
+  <script src="js/cards.js" defer></script>
+  <script src="js/rain.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="site">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1>To the woman who made ordinary days feel like stories.</h1>
+        <p class="sub">A small, late birthday note. <strong>If not now, when?</strong></p>
+
+        <button class="start-btn" id="startBtn">Start</button>
+        <button class="start-btn" id="openModalBtn">Read letter</button>
+      </div>
+
+      <div class="hero-visual">
+        <img src="assets/images/sketch.svg" alt="Maleficent silhouette" />
+      </div>
+    </header>
+
+    <!-- CAR SCENE -->
+    <section id="carScene" class="scene car-scene">
+      <h2>The car rides</h2>
+      <p class="sub">Where you told me the way and I missed every turn.</p>
+
+      <div id="carStage" class="car-stage">
+        <!-- SVG injected here by JS or left inline -->
+      </div>
+
+      <div id="carBubbles" class="bubble-container"></div>
+      <div id="polaroids" class="polaroid-row"></div>
+    </section>
+
+    <!-- RAIN SCENE -->
+    <section class="scene rain-scene">
+      <h2>That night in the rain</h2>
+      <canvas id="rainCanvas"></canvas>
+      <p class="rain-text">We walked into the rain and sat until the world quieted.</p>
+    </section>
+
+    <!-- LETTER -->
+    <section id="letterScene" class="scene letter-scene">
+      <h2>A small, late birthday letter</h2>
+      <blockquote class="pull-quote">This was meant to be your birthday gift. If not now, when?</blockquote>
+      <div id="letterText" class="letter"></div>
+
+      <button id="revealBtn" class="start-btn">Reveal Letter</button>
+    </section>
+
+    <!-- CARDS -->
+    <section class="scene cards-scene">
+      <h2>Little promises</h2>
+      <div id="cardsDeck" class="cards-deck"></div>
+    </section>
+
+  </div>
+
+<!-- Password Modal: hidden attribute ensures it's hidden by default -->
+<div class="modal hidden" id="passwordModal" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+  <div class="panel">
+    <h3>Enter passphrase</h3>
+    <input id="passInput" class="input" placeholder="Passphrase" />
+    <div style="display:flex; gap:8px;">
+      <button id="passSubmit" class="start-btn">Open</button>
+      <button id="passCancel" class="start-btn soft">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
