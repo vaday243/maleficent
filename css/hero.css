@@ -1,0 +1,111 @@
+/* hero.css - hero screen styling for Maleficent + Sunflower theme */
+:root{
+  --bg0: #05060a;
+  --bg1: #0b1220;
+  --muted: #a6b0b6;
+  --accent1: #d9b3ff;
+  --accent2: #ffd6a5;
+  --paper: #fff7eb;
+  --max: 1100px;
+}
+
+/* body reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: radial-gradient(1200px 500px at 10% 20%, rgba(80,30,120,0.12), transparent 6%),
+              linear-gradient(180deg, rgba(6,8,11,1) 0%, rgba(10,12,20,1) 100%);
+  color: #f7f8fa;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:30px;
+  display:flex;
+  justify-content:center;
+}
+
+/* optional background sunflower image if you have one */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image: url('../assets/bg-sunflower.jpg'); /* OPTIONAL: add subtle sunflower texture here */
+  background-size:cover;
+  background-position: center right;
+  opacity: 0.06;
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+
+/* container */
+.hero-root{
+  width:100%;
+  max-width:var(--max);
+}
+
+/* header logo */
+.hero-header{ display:flex; justify-content:center; margin-bottom:28px; }
+.logo { font-family: 'Playfair Display', serif; font-weight:700; font-size:48px; margin:0; color:transparent; -webkit-text-stroke:1px rgba(220,200,255,0.95); letter-spacing:1px; text-shadow: 0 6px 28px rgba(60,20,80,0.45); }
+/* small glow gradient */
+.logo::after{
+  content:'';
+  position:relative;
+}
+
+/* hero center */
+.hero-center{ display:flex; align-items:center; justify-content:center; min-height:60vh; }
+.hero-inner{
+  display:flex;
+  gap:34px;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 30px 60px rgba(3,6,12,0.6);
+}
+
+/* envelope area */
+.envelope-wrap{
+  position:relative;
+  width:560px;
+  max-width:56vw;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+}
+.envelope-svg{ width:100%; height:auto; display:block; filter: drop-shadow(0 18px 28px rgba(8,6,12,0.6)); }
+
+/* text block over the envelope */
+.env-text{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:90px;
+  text-align:center;
+  width:62%;
+}
+.env-sub{ color:var(--muted); text-transform:uppercase; font-size:12px; letter-spacing:1.2px; margin-bottom:8px; }
+.env-title{ font-family:'Playfair Display', serif; font-size:26px; margin:0; color:var(--bg0); -webkit-text-stroke:0.6px rgba(110,30,110,0.9); background: linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.env-line{ margin-top:8px; color: #5b4750; font-size:14px; line-height:1.4; }
+
+/* sketch portrait */
+.sketch-wrap{ width:260px; display:flex; flex-direction:column; align-items:center; gap:12px; transform:translateY(6px); }
+.sketch-wrap img{ width:220px; height:auto; display:block; border-radius:12px; background:#fff; padding:12px; box-shadow: 0 18px 40px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.04); filter: drop-shadow(0 20px 40px rgba(20,0,50,0.45)); }
+
+/* sunflower accent position */
+.sunflower-accent{ margin-top:6px; opacity:0.95; transform: translateY(-6px); filter: drop-shadow(0 10px 22px rgba(0,0,0,0.6)); }
+
+/* footer */
+.hero-footer{ text-align:center; margin-top:18px; color:var(--muted); }
+
+/* responsive */
+@media (max-width:920px){
+  .hero-inner{ flex-direction:column; gap:18px; padding:22px; }
+  .envelope-wrap{ width:90%; max-width:680px; }
+  .sketch-wrap{ width:200px; }
+  .logo{ font-size:38px; }
+}
