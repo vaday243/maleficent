@@ -12,93 +12,48 @@
 </head>
 <body>
 
-  <main class="hero-root">
-    <!-- top logo -->
-    <header class="hero-header" aria-hidden="false">
-      <div class="logo-wrap">
-        <h1 class="logo">Maleficent</h1>
-      </div>
-    </header>
+<main class="hero-root">
 
-    <!-- hero content -->
-    <section class="hero-center" role="main" aria-label="Maleficent hero">
-      <div class="hero-inner">
+  <header class="hero-header">
+    <h1 class="logo">Maleficent</h1>
+  </header>
 
-        <!-- envelope card -->
-        <div class="envelope-wrap" aria-hidden="false">
-          <!-- inline envelope svg (stylable) -->
-          <svg class="envelope-svg" viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="envGrad" x1="0" x2="1">
-                <stop offset="0" stop-color="#fff9ef" />
-                <stop offset="1" stop-color="#fff1d9" />
-              </linearGradient>
-              <filter id="paper" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence baseFrequency="0.9" numOctaves="1" stitchTiles="stitch"/>
-                <feColorMatrix type="saturate" values="0"/>
-                <feComponentTransfer>
-                  <feFuncA type="linear" slope="0.04"/>
-                </feComponentTransfer>
-                <feBlend in="SourceGraphic"/>
-              </filter>
-            </defs>
+  <section class="hero-center">
+    <div class="hero-inner">
 
-            <!-- envelope body -->
-            <rect x="12" y="60" rx="12" ry="12" width="576" height="300" fill="url(#envGrad)" stroke="#f0e6d0" stroke-width="1.4"/>
-            <!-- flap -->
-            <path d="M12 60 L300 220 L588 60 Z" fill="#fff7e8" opacity="0.98" stroke="#efe0c6" stroke-width="1"/>
-            <!-- subtle crease lines -->
-            <path d="M30 90 L300 230 L570 90" stroke="#efe6d2" stroke-opacity="0.42" stroke-width="1" fill="none"/>
-            <!-- envelope shadow -->
-            <ellipse cx="300" cy="380" rx="180" ry="18" fill="rgba(5,5,5,0.25)"/>
-          </svg>
+      <!-- Envelope -->
+      <div class="envelope-wrap">
+        <svg class="envelope-svg" viewBox="0 0 600 420">
+          <defs>
+            <linearGradient id="envGrad" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff9ef" />
+              <stop offset="1" stop-color="#fff1dd" />
+            </linearGradient>
+          </defs>
 
-          <!-- text that appears ON envelope -->
-          <div class="env-text">
-            <div class="env-sub">a small, late birthday note</div>
-            <h2 class="env-title">For Maleficent</h2>
-            <p class="env-line">This was meant to be your birthday gift. If not now, when?</p>
-          </div>
+          <rect x="12" y="60" width="576" height="300" rx="18" fill="url(#envGrad)" />
+          <path d="M12 60 L300 220 L588 60 Z" fill="#fff6e8" />
+        </svg>
+
+        <div class="env-text">
+          <div class="env-sub">A SMALL, LATE BIRTHDAY NOTE</div>
+          <h2 class="env-title">For Maleficent</h2>
+          <p class="env-line">This was meant to be your birthday gift. If not now, when?</p>
         </div>
-
-        <!-- sketch portrait to the right -->
-        <aside class="sketch-wrap" aria-hidden="true">
-          <!-- replace this src with your exported sketch: assets/sketch.png -->
-          <img src="assets/sketch.png" alt="Sketch portrait" id="sketchImage" />
-          <div class="sunflower-accent" aria-hidden="true">
-            <!-- simple sunflower svg or decorative circle -->
-            <svg viewBox="0 0 120 120" width="120" height="120">
-              <defs>
-                <linearGradient id="sunG" x1="0" x2="1"><stop offset="0" stop-color="#FFD66B"/><stop offset="1" stop-color="#FFAD33"/></linearGradient>
-              </defs>
-              <circle cx="60" cy="60" r="26" fill="#7a4200"/>
-              <circle cx="60" cy="60" r="20" fill="url(#sunG)"/>
-              <!-- petals -->
-              <g fill="url(#sunG)" opacity="0.95">
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(0 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(30 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(60 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(90 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(120 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(150 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(180 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(210 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(240 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(270 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(300 60 60)"/>
-                <path d="M60 6 L68 34 L52 34 Z" transform="rotate(330 60 60)"/>
-              </g>
-            </svg>
-          </div>
-        </aside>
-
       </div>
-    </section>
 
-    <footer class="hero-footer" aria-hidden="true">
-      <small>no asks. just gratitude.</small>
-    </footer>
-  </main>
+      <!-- Sketch -->
+      <aside class="sketch-wrap">
+        <div class="sketch-frame">
+          <img src="assets/sketch.png" alt="Sketch portrait">
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+</main>
+
 
   <script src="js/hero.js"></script>
 </body>
